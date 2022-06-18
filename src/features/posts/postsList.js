@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { PostAuthor } from './postAuthor';
 import { TimeAgo } from './timeAgo';
+import { ReactionButtons } from './reactionButtons';
 
 export const PostsList = () => {
     const posts = useSelector( state => state.posts);
@@ -18,6 +19,7 @@ export const PostsList = () => {
             </Link>
             <PostAuthor userId={post.user} />
             <TimeAgo timeStamp={post.date} />
+            <ReactionButtons post={post} />
         </article>
     ));
 

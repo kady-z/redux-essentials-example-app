@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { PostAuthor } from './postAuthor';
 import { TimeAgo } from './timeAgo';
+import { ReactionButtons } from './reactionButtons';
 
 export const SinglePostPage = ({ match }) => {
     const { postId } = match.params;
@@ -25,6 +26,7 @@ export const SinglePostPage = ({ match }) => {
                 <p className="post-content">{post.content}</p>
                 <PostAuthor userId={post.user} />
                 <TimeAgo timeStamp={post.date} />
+                <ReactionButtons post={post} />
                 <Link to={`/editpost/${post.id}`} className="button">
                     Edit Post
                 </Link>
